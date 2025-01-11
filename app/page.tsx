@@ -6,15 +6,13 @@ const ContactForm = () => {
       <form
         name="contact"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
         className="bg-white p-6 rounded shadow-md w-full max-w-md"
       >
         {/* Hidden field for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
         <p className="hidden">
           <label>
-            Don’t fill this out: <input name="bot-field" />
+            Don’t fill this out: 
           </label>
         </p>
 
