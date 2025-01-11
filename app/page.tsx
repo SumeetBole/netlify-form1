@@ -7,6 +7,7 @@ const ContactForm = () => {
         name="contact"
         method="POST"
         className="bg-white p-6 rounded shadow-md w-full max-w-md"
+        data-netlify="true"
       >
         {/* Hidden field for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
