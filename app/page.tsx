@@ -2,20 +2,20 @@
 
 import React, { useState } from 'react';
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState<string>('');
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
@@ -49,7 +49,6 @@ const ContactForm = () => {
         className="bg-white p-6 rounded shadow-md w-full max-w-md"
         onSubmit={handleSubmit}
       >
-        {/* Hidden field for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
 
@@ -105,3 +104,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
